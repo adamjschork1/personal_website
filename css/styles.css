@@ -1,91 +1,162 @@
+* {cursor: url(https://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), auto !important;}
+
+html, body {
+  height: 100vh;
+  width: 100%;
+  min-height: 900px;
+  margin: 0;
+  padding: 0;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52)), url('https://www.shore-pc.com/wp-content/uploads/2014/11/circuits-background.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 body {
   font-size: 18px;
-  font-family: Comfortaa;
-}
-
-nav {
-  position: absolute;
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 2;
-  left: 0;
-  top: 0;
-}
-@media (max-width: 450px) {
-  #about-title {
-    font-size: 14px !important;
-    margin-top: 45px;
-  }
-  nav {
-    margin-left: -50px;
-    margin-top: -10px;
-  }
-}
-
-nav li {
-  list-style-type: none;
-  padding: 10px 20px;
-  border-radius: 2px;
-}
-
-nav li:hover {
-
+  font-family: 'Orbitron', sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: black;
 }
 
-a:hover {
-  color: red;
+#navBlink {
+  -webkit-animation-name: nav-blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+/*  animation: nav-blink 1s infinite;  -- Shorthand not supported on all browsers -- */
 }
-
-.img-wrap {
-  margin-top: 130px;
-  margin-left: 100px;
-  margin-right: 100px;
-  max-width: 700px;
-  position: relative;
+@-webkit-keyframes nav-blink {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
 }
-
-
 
 #home-title {
-  font-family: Kalam;
   font-size: 40px;
   text-align: center;
-  top: -30px;
-  position: absolute;
-  width: 100%;
-  animation-name: title-flash;
-  animation-duration: 3s;
+  /* This initial title color is changed to black after title animation */
+  color: white;
+  padding-top: 54px;
 }
-@keyframes title-flash {
+
+#home-title div {
+  display: inline-block;
+  -webkit-animation-name: title-flash;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-fill-mode: forwards;
+/*  animation: title-flash 4s forwards; */
+}
+@-webkit-keyframes title-flash {
   50% {
-    color: red;
+    color: #ffbc0b;
+  }
+  100% {
+    color: black;
   }
 }
-@media (max-width: 879px) {
-  #home-title {
-    font-size: 20px;
-    top: 0;
-  }
+/* Cycles through the divs surrounding each title letter, see if you can refine this. Javascript might be the way to go so you can reuse on any length of text without having to manually specify each div */
+#home-title div:nth-child(1) { animation-delay: .5s }
+#home-title div:nth-child(2) { animation-delay: .75s }
+#home-title div:nth-child(3) { animation-delay: 1s }
+#home-title div:nth-child(4) { animation-delay: 1.25s }
+#home-title div:nth-child(5) { animation-delay: 1.5s }
+#home-title div:nth-child(6) { animation-delay: 1.75s }
+#home-title div:nth-child(7) { animation-delay: 2s }
+#home-title div:nth-child(8) { animation-delay: 2.25s }
+#home-title div:nth-child(9) { animation-delay: 2.5s }
+#home-title div:nth-child(10) { animation-delay: 2.75s }
+
+/* hexagons for menu items - if you change the size, be sure to change link line-height to keep centered inside shape and adjust font size as needed so as not to clip text */
+.hexagon {
+  opacity: 0.9;
+  text-align: center;
+  background-image: radial-gradient(#6b7664, #0d2a35);
+  text-color: white;
+  height: 246px;
+  width: 246px;
+  display: inline-block;
+  -webkit-clip-path: polygon(
+    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+  );
+  -moz-clip-path: polygon(
+    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+  );
+  -ms-clip-path: polygon(
+    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+  );
+  clip-path: polygon(
+    50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%
+  );
 }
-@media (max-width: 617px) {
+
+.hexagon a {
+  line-height: 246px;
+  color: white;
+}
+.hexagon a:hover {
+  color: #ffbc0b;
+}
+
+.nav-container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nav-tiers {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: -60px;
+}
+
+.hex-two {}
+
+/* Mobile */
+
+@media (max-width: 1044px) {
   #home-title {
-    font-size: 16px;
-    text-align: right;
-    margin-left: -20px;
+    font-size: 28px;
   }
 }
 
-.shadow-bottom {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0px -7px 10px 15px white;
+@media (max-width: 744px) {
+  .mobile-hide {
+    display:none;
+  }
+}
+
+@media (max-width: 492px) {
+  body {
+    font-size: 12px;
+  }
+  .hexagon {
+    opacity: 0.8;
+    height: 123px;
+    width: 123px;
+  }
+  .hexagon a {
+    line-height: 123px;
+  }  
+  .nav-tiers {
+    flex-direction: column;
+    margin-bottom: -28px;
+    align-items: center;
+  }
+  .hex-two {
+    margin-left: 123px !important;
+    margin-top: -28px !important;
+  }
+  #home-title {
+    font-size: 18px;
+  }
 }
 
 /* About page styling */
