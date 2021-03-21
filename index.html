@@ -1,43 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-  <title>Adam Schork</title>
-  <meta name="keywords" content="adam schork"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+<head><meta charset="us-ascii">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adam Schork</title>
+	<meta name="keywords" content="adam schork"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+<!-- Homepage title -->
 <div id="home-title">
   <h1><div>a</div><div>d</div><div>a</div><div>m</div> <div>s</div><div>c</div><div>h</div><div>o</div><div>r</div><div>k</div></h1>
-  </div>
-
- <div class="nav">      
-   <div class="hexagon" onclick="toggleList();">
-    <a href="#">LEARN MORE<span id="navBlink">_</span>
-    </a>
-  </div> 
-    <div id="navDropDown">
-      <div class="hexagon">
-        <a href="#">> Digital Marketing</a>
-      </div>
-      <div class="hexagon">
-        <a href="#">> Web Development</a>
-      </div>
-    </div>
-  </div>
-  <div class="nav-level-two"> 
-    <div class="hexagon">
-      <a href="#">JOURNAL</a>
-    </div>
-    <div class="hexagon">
-      <a href="#">FAQ</a>
-    </div>
-    <div class="hexagon">
-      <a href="#">CONTACT</a>
-    </div>
-  </div>
-  
+</div>
+<!-- End Homepage title -->
+<!-- Begin Nav Container that holds all hexagons -->
+<div class="nav-container"> 
+<!-- Begin level one -->   
+<div class="nav-tiers">   
+ <div class="hexagon">
+  <a href="#">LEARN  MORE <span id="navBlink">></span></a>
+ </div>
+ <div class="hexagon hex-two">
+  <a href="#">WEB  DEVELOPMENT</a>
+ </div>
+</div>
+<!-- End level one -->  
+<!-- Begin level two -->
+<div class="nav-tiers">    
+ <div class="hexagon">
+  <a href="#">DIGITAL  MARKETING</a>
+ </div>
+ <div class="hexagon mobile-hide">
+ </div>
+ <div class="hexagon hex-two">
+  <a href="#">JOURNAL</a>
+ </div>
+</div>
+<!-- End level two -->
+<!-- Begin level three -->
+<div class="nav-tiers"> 
+ <div class="hexagon">
+  <a href="#">FAQ</a>
+ </div>
+ <div class="hexagon hex-two">
+  <a href="#">CONTACT</a>
+ </div>
+</div>
+<!-- End level three -->  
+</div>
+<!-- End nav container -->
 </body>
 </html>
