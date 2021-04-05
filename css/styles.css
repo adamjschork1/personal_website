@@ -3,18 +3,21 @@
 html, body {
   height: 100vh;
   width: 100%;
-  min-height: 900px;
   margin: 0;
-  padding: 0;
+  padding: 0; 
+}
+
+.home-page {
   background-image:
     linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52)), url('https://www.shore-pc.com/wp-content/uploads/2014/11/circuits-background.jpg'); 
   background-size: cover;
   background-attachment: fixed;
 }
 
-body {
-  font-size: 18px;
+.orbitron-link a {
   font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 a {
@@ -108,6 +111,7 @@ a {
 .nav-container {
   margin: 0 auto;
   width: 100%;
+  margin-bottom: 200px !important;
 }
 
 .nav-tiers {
@@ -116,8 +120,6 @@ a {
   justify-content: center;
   margin-bottom: -60px;
 }
-
-.hex-two {}
 
 /* Mobile */
 
@@ -134,7 +136,7 @@ a {
 }
 
 @media (max-width: 492px) {
-  body {
+  body p {
     font-size: 12px;
   }
   .hexagon {
@@ -144,6 +146,7 @@ a {
   }
   .hexagon a {
     line-height: 123px;
+    font-size: 8px;
   }  
   .nav-tiers {
     flex-direction: column;
@@ -157,42 +160,139 @@ a {
   #home-title {
     font-size: 18px;
   }
+  .about-pages-body {
+      padding: 6px;
+  }
+  .center-titles-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+}
+
+.message-banner {
+  text-align: center;
+  opacity: 0.6;
+  background-color: #ffbc0b;
+  padding: 12px;
+}
+.message-banner p {
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 0 !important;
 }
 
 /* About page styling */
 
-#about-title {
-  font-family: Kalam;
-  font-size: 35px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.about-titles {
   text-align: center;
-  top: -30px;
-  position: absolute;
-  width: 100%;
+  font-size: 40px;
 }
-@media (max-width: 879px) {
-  #about-title {
-    font-size: 20px;
-    top: 0;
+
+/* About pages - title animations 1 & 2 */
+
+.ta1 {
+  color: #ffbc0b;
+  opacity: 0;
+  display: inline;
+  animation: title-appear 3s forwards;
+} @keyframes title-appear {
+  0% {
+  opacity: 0;
   }
-}
-@media (max-width: 640px) {
-  #about-title {
-    font-size: 16px;
-    text-align: right;
-    margin-left: -20px;
-  }
-  #about-content {
-    width: 80% !important;
-    padding-left: 10% !important;
-    padding-right: 10% !important;
+  100% {
+    opacity: 1;
   }
 }
 
-#about-content {
-  position: absolute;
-  margin: 160px auto;
-  width: 60%;
+.ta2 {
+  color: #6b7664;
+  opacity: 0;
+  display: inline;
+  animation: title-appear 3s 3s forwards;
+}
+
+/* End about pages title animation */
+
+.about-pages {
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52));
+  background-attachment: fixed;
+
+}
+
+.about-pages p {
+  text-indent: 2em;
+  font-size: 18px;
+  margin: 30px 0;
+  font-family: 'Raleway', 'Roboto', sans-serif;
+  line-height: 28px;
+}
+
+.about-pages ul {
+  font-family: 'Raleway', 'Roboto', sans-serif;
+  font-size: 18px;
+  list-style-type: none;
+}
+
+.about-pages-body {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.about-pages hr {
+    height: 10px;
+    border-top: 1px solid #ffbc0b !important;
+    border: 0;
+    box-shadow: inset 0 10px 10px -10px rgba(255, 188, 11, 0.5);
+}
+
+.star-rating {
+  display: inline;
+  margin-left: 30px;
+}
+
+.star-rating .checked {
+  color: #ffbc0b;
+}
+
+.star-rating .not-checked {
+  color: #6b7664;
+}
+
+.inline {
+  display: inline;
+}
+
+footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #0d2a35;
+  opacity: 0.8;
+  position: relative;
+  margin-top: 60px;
+  width: inherit;
   text-align: center;
-  padding-left: 20%;
-  padding-right: 20%;
+}
+
+footer ul {
+    list-style-type:none;
+}
+
+footer a {
+  line-height: 28px;
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffbc0b;
 }
