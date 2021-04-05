@@ -7,22 +7,35 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121609651-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-121609651-1');
+</script>
+
 </head>
 <body>
+  <div class="home-page">
+<div class="message-banner">
+  <p>currently under construction</p>
+</div>
 <!-- Homepage title -->
 <div id="home-title">
   <h1><div>a</div><div>d</div><div>a</div><div>m</div> <div>s</div><div>c</div><div>h</div><div>o</div><div>r</div><div>k</div></h1>
 </div>
 <!-- End Homepage title -->
 <!-- Begin Nav Container that holds all hexagons -->
-<div class="nav-container"> 
+<div class="nav-container orbitron-link"> 
 <!-- Begin level one -->   
 <div class="nav-tiers">   
- <div class="hexagon">
+ <div class="hexagon" onclick="toggleList();">
   <a href="#">LEARN  MORE <span id="navBlink">></span></a>
  </div>
  <div class="hexagon hex-two">
-  <a href="#">WEB  DEVELOPMENT</a>
+  <a href="/web-development.html">WEB  DEVELOPMENT</a>
  </div>
 </div>
 <!-- End level one -->  
@@ -50,5 +63,17 @@
 <!-- End level three -->  
 </div>
 <!-- End nav container -->
+
+      <footer class="orbitron-link">
+    <ul>
+      <li><a href="/web-development.html">WEB  DEVELOPMENT</a></li>
+      <li><a href="#">DIGITAL  MARKETING</a></li>
+      <li><a href="#">JOURNAL</a></li>
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">CONTACT</a></li>
+    </ul>
+  </footer>
+    
+  </div>
 </body>
 </html>
