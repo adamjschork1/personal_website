@@ -1,3 +1,4 @@
+/* Site-wide styles and classes */
 * {cursor: url(https://cur.cursors-4u.net/cursors/cur-11/cur1054.cur), auto !important;}
 
 html, body {
@@ -7,11 +8,8 @@ html, body {
   padding: 0; 
 }
 
-.home-page {
-  background-image:
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52)), url('https://www.shore-pc.com/wp-content/uploads/2014/11/circuits-background.jpg'); 
-  background-size: cover;
-  background-attachment: fixed;
+a {
+  text-decoration: none;
 }
 
 .orbitron-link a {
@@ -20,26 +18,119 @@ html, body {
   text-decoration: none;
 }
 
-a {
+.message-banner {
+  text-align: center;
+  opacity: 0.6;
+  background-color: #ffbc0b;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+.message-banner p {
+  display: block;
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 0px !important;
+  padding: 12px 0;
+}
+
+.star-rating {
+  display: inline;
+  margin-left: 30px;
+}
+
+.star-rating .checked {
+  color: #ffbc0b;
+}
+
+.star-rating .not-checked {
+  color: #6b7664;
+}
+
+.inline {
+  display: inline;
+}
+
+footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #0d2a35;
+  opacity: 0.8;
+  position: relative;
+  margin-top: 60px;
+  width: inherit;
+  text-align: center;
+}
+
+footer ul {
+    list-style-type:none;
+}
+
+footer a {
+  line-height: 28px;
+  color: white;
   text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffbc0b;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  max-width: 100%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  opacity: 0.8;
+  border: 1px solid #ffbc0b;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* End site-wide styles and classes */
+
+/* Home page */
+
+.home-page {
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52)), url('https://www.shore-pc.com/wp-content/uploads/2014/11/circuits-background.jpg'); 
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #navBlink {
   -webkit-animation-name: nav-blink;
   -webkit-animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
-/*  animation: nav-blink 1s infinite;  -- Shorthand not supported on all browsers -- */
-}
-@-webkit-keyframes nav-blink {
-  0% {
-    opacity: 0%;
-  }
-  50% {
-    opacity: 100%;
-  }
-  100% {
-    opacity: 0%;
-  }
+  animation-name: nav-blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+} @-webkit-keyframes nav-blink {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+} @keyframes nav-blink {
+  0% {opacity: 0;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
 }
 
 #home-title {
@@ -55,16 +146,17 @@ a {
   -webkit-animation-name: title-flash;
   -webkit-animation-duration: 4s;
   -webkit-animation-fill-mode: forwards;
-/*  animation: title-flash 4s forwards; */
+  animation-name: title-flash;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+} @-webkit-keyframes title-flash {
+  50% {color: #ffbc0b;}
+  100% {color: black;}
+} @keyframes title-flash {
+  50% {color: #ffbc0b;}
+  100% {color: black;}
 }
-@-webkit-keyframes title-flash {
-  50% {
-    color: #ffbc0b;
-  }
-  100% {
-    color: black;
-  }
-}
+
 /* Cycles through the divs surrounding each title letter, see if you can refine this. Javascript might be the way to go so you can reuse on any length of text without having to manually specify each div */
 #home-title div:nth-child(1) { animation-delay: .5s }
 #home-title div:nth-child(2) { animation-delay: .75s }
@@ -82,7 +174,6 @@ a {
   opacity: 0.9;
   text-align: center;
   background-image: radial-gradient(#6b7664, #0d2a35);
-  text-color: white;
   height: 246px;
   width: 246px;
   display: inline-block;
@@ -160,29 +251,14 @@ a {
   #home-title {
     font-size: 18px;
   }
-  .about-pages-body {
-      padding: 6px;
-  }
   .center-titles-mobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.message-banner {
-  text-align: center;
-  opacity: 0.6;
-  background-color: #ffbc0b;
-  padding: 12px;
-}
-.message-banner p {
-  font-family: 'Orbitron', sans-serif !important;
-  font-size: 18px !important;
-  line-height: 0 !important;
-}
-
-/* About page styling */
+/* About pages */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
@@ -200,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   display: inline;
   animation: title-appear 3s forwards;
-} @keyframes title-appear {
+} @-webkit-keyframes title-appear {
   0% {
   opacity: 0;
   }
@@ -219,17 +295,16 @@ h1, h2, h3, h4, h5, h6 {
 /* End about pages title animation */
 
 .about-pages {
-
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 60px 0 0 0;
   background-image:
     linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgba(145, 220, 212, 0.52));
   background-attachment: fixed;
 
 }
 
-.about-pages p {
+.about-pages-body p {
   text-indent: 2em;
   font-size: 18px;
   margin: 30px 0;
@@ -237,62 +312,22 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 28px;
 }
 
-.about-pages ul {
+.about-pages-body ul {
   font-family: 'Raleway', 'Roboto', sans-serif;
   font-size: 18px;
+  line-height: 28px;
   list-style-type: none;
 }
 
 .about-pages-body {
   max-width: 1080px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.about-pages hr {
+.about-pages-body hr {
     height: 10px;
     border-top: 1px solid #ffbc0b !important;
     border: 0;
     box-shadow: inset 0 10px 10px -10px rgba(255, 188, 11, 0.5);
-}
-
-.star-rating {
-  display: inline;
-  margin-left: 30px;
-}
-
-.star-rating .checked {
-  color: #ffbc0b;
-}
-
-.star-rating .not-checked {
-  color: #6b7664;
-}
-
-.inline {
-  display: inline;
-}
-
-footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #0d2a35;
-  opacity: 0.8;
-  position: relative;
-  margin-top: 60px;
-  width: inherit;
-  text-align: center;
-}
-
-footer ul {
-    list-style-type:none;
-}
-
-footer a {
-  line-height: 28px;
-  color: white;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #ffbc0b;
 }
