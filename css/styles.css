@@ -66,16 +66,29 @@ footer {
 
 footer ul {
     list-style-type:none;
+    margin-left: -40px;
 }
 
 footer a {
   line-height: 28px;
   color: white;
-  text-decoration: none;
 }
 
 footer a:hover {
   color: #ffbc0b;
+}
+
+footer img {
+  width: 40px;
+  padding: 0px;
+  margin: 10px;
+  border: 1px solid #0d2a35;
+  opacity: 0.8;
+}
+
+footer img:hover {
+  border: 1px solid #ffbc0b;
+  border-radius: 50%;
 }
 
 .row {
@@ -98,12 +111,18 @@ footer a:hover {
   border: 1px solid #ffbc0b;
 }
 
+.column img:hover {
+  opacity: 1;
+  border: 1px solid #000000;
+}
+
 @media screen and (max-width: 600px) {
   .column {
     flex: 100%;
     max-width: 100%;
   }
 }
+
 
 /* End site-wide styles and classes */
 
